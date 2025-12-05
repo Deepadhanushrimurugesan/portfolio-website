@@ -1,281 +1,69 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Deepa Dhanushri — Portfolio</title>
-  <meta name="description" content="Personal portfolio of Deepa Dhanushri — Web developer & UI/UX designer." />
-  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
-  <style>
-    /* ---------- Reset & base ---------- */
-    :root{
-      --bg: #0f1724;
-      --card: #0b1220;
-      --muted: #94a3b8;
-      --accent-start: #7c3aed;
-      --accent-end: #06b6d4;
-      --glass: rgba(255,255,255,0.04);
-      --glass-2: rgba(255,255,255,0.02);
-      --radius: 14px;
-      --glass-border: rgba(255,255,255,0.06);
-      --max-width: 1100px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.08), transparent),
-                  radial-gradient(1000px 500px at 90% 90%, rgba(6,182,212,0.05), transparent),
-                  var(--bg);
-      color:#e6eef6;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
-      padding:40px 20px;
-    }
-    .container{max-width:var(--max-width);margin:0 auto}
-
-    /* ---------- Header / Nav ---------- */
-    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:54px;height:54px;background:var(--glass);border-radius:12px;display:flex;align-items:center;justify-content:center;border:1px solid var(--glass-border);font-weight:700}
-    nav{display:flex;gap:12px;align-items:center}
-    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px}
-    nav a:hover{color:#fff;background:var(--glass-2)}
-    .cta{background:linear-gradient(90deg,var(--accent-start),var(--accent-end));padding:8px 14px;border-radius:12px;color:#fff;text-decoration:none;font-weight:600}
-
-    /* ---------- Hero ---------- */
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-bottom:34px}
-    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:28px;border-radius:18px;border:1px solid var(--glass-border);backdrop-filter: blur(6px)}
-    h1{font-size:clamp(26px,4vw,40px);margin:0 0 8px}
-    .typing{color:#c7f9ff;font-weight:700}
-    .tagline{color:var(--muted);margin-top:8px}
-    .hero-actions{margin-top:18px;display:flex;gap:12px}
-    .btn{padding:10px 14px;border-radius:12px;text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:8px}
-    .btn-outline{border:1px solid var(--glass-border);color:var(--muted);background:transparent}
-
-    /* ---------- Cards row ---------- */
-    .kpis{display:flex;gap:14px;margin-top:18px}
-    .kpi{flex:1;background:var(--card);padding:14px;border-radius:12px;border:1px solid var(--glass-border);text-align:center}
-    .kpi strong{display:block;font-size:20px}
-    .kpi small{color:var(--muted)}
-
-    /* ---------- Projects slider ---------- */
-    .projects{margin-top:8px}
-    .slider{position:relative;overflow:hidden;border-radius:12px;border:1px solid var(--glass-border)}
-    .slides{display:flex;transition:transform .45s cubic-bezier(.22,.9,.45,1)}
-    .slide{min-width:100%;padding:18px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);display:flex;gap:16px;align-items:center}
-    .project-thumb{width:180px;height:120px;border-radius:8px;background:linear-gradient(45deg,#0b1220,#152033);display:flex;align-items:center;justify-content:center;font-weight:700}
-    .project-meta{flex:1}
-    .project-meta h3{margin:0 0 6px}
-    .project-meta p{margin:0;color:var(--muted)}
-    .slider-controls{position:absolute;bottom:12px;left:12px;right:12px;display:flex;justify-content:space-between}
-
-    /* ---------- About & Skills ---------- */
-    .about{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:28px}
-    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid var(--glass-border)}
-    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-    .skill{background:var(--glass);padding:8px 10px;border-radius:10px;color:var(--muted)}
-
-    /* ---------- Contact ---------- */
-    form{display:grid;gap:10px}
-    input,textarea{width:100%;padding:10px;border-radius:10px;border:1px solid var(--glass-border);background:transparent;color:inherit}
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-
-    /* ---------- Footer ---------- */
-    footer{margin-top:30px;text-align:center;color:var(--muted)}
-
-    /* ---------- Responsive ---------- */
-    @media (max-width:980px){
-      .hero{grid-template-columns:1fr}
-      .about{grid-template-columns:1fr}
-      nav{display:none}
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deepa Dhanushri Portfolio</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="logo">DD</div>
-        <div>
-          <div style="font-weight:700">Deepa Dhanushri</div>
-          <div style="font-size:12px;color:var(--muted)"></div>
-        </div>
-      </div>
 
-      <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact" class="cta">Contact</a>
-      </nav>
-    </header>
+<!-- Navbar -->
+<nav>
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#contact">Contact</a>
+</nav>
 
-    <section class="hero">
-      <div class="hero-card">
-        <h1>Hello — I'm <span style="color:#fff">Deepa Dhanushri murugesan</span></h1>
-        <div class="tagline">I build beautiful, usable websites and delightful experiences for the web.</div>
-        <div class="typing" id="typing" style="margin-top:12px;font-size:16px"></div>
+<!-- Hero Section -->
+<section class="hero" id="hero">
+    <h1>Hello, I'm <span>Deepa Dhanushri</span></h1>
+    <p class="typing">Web Developer | Designer | Student</p>
+    <button onclick="window.location.href='resume.pdf'">Download Resume</button>
+</section>
 
-        <div class="hero-actions">
-          <a class="btn btn-outline" href="#projects" style="background:transparent;border:1px solid var(--glass-border);">View Projects</a>
-          <a class="btn" href="mailto:deepa@example.com?subject=Hello" style="background:linear-gradient(90deg,var(--accent-start),var(--accent-end));color:#fff;">Hire Me</a>
-        </div>
+<!-- About Section -->
+<section class="about" id="about">
+    <h2>About Me</h2>
+    <p>I am a passionate web developer and college student skilled in HTML, CSS, JavaScript, PHP, and MySQL. I love creating modern web applications and designing user-friendly interfaces.</p>
+</section>
 
-        <div class="kpis" aria-hidden="true">
-          <div class="kpi"><strong>20+</strong><small>Projects</small></div>
-          <div class="kpi"><strong>3+</strong><small>Years Experience</small></div>
-          <div class="kpi"><strong>100%</strong><small>Client Satisfaction</small></div>
-        </div>
-      </div>
+<!-- Projects Section -->
+<section class="projects" id="projects">
+    <h2>Projects</h2>
+    <div class="project-card">
+        <h3>Women Safety Application – ProtectHER</h3>
+        <p>Developed using HTML, CSS, JS (Frontend) and PHP, MySQL (Backend). Provides SOS, location sharing, and emergency features.</p>
+    </div>
+    <div class="project-card">
+        <h3>Hospital Management System</h3>
+        <p>Complete patient management using HTML, PHP, and MySQL including admission, lab records, ICU, and surgery tracking.</p>
+    </div>
+    <div class="project-card">
+        <h3>Railway Management System</h3>
+        <p>Responsive web app for train booking and scheduling using HTML, CSS, PHP, and MySQL.</p>
+    </div>
+</section>
 
-      <aside>
-        <div class="card">
-          <h3>Quick Info</h3>
-          <p style="color:var(--muted);margin-top:8px">Location: Coimbatore, India<br/>Open to remote work • Available for freelancing</p>
-          <div style="margin-top:12px;display:flex;gap:8px">
-            <a class="btn btn-outline" href="#contact" style="background:transparent;border:1px solid var(--glass-border);">Say Hi</a>
-            <a class="btn btn-outline" href="#" download style="background:transparent;border:1px solid var(--glass-border);">Resume</a>
-          </div>
-        </div>
+<!-- Certificates Section -->
+<section class="certificates" id="certificates">
+    <h2>Certificates</h2>
+    <ul>
+        <li>Full Stack Development 101 – Simplilearn</li>
+        <li>Intro to Big Data – Simplilearn</li>
+    </ul>
+</section>
 
-        <div class="card" style="margin-top:12px">
-          <h4 style="margin:0 0 6px">Tech</h4>
-          <div class="skills">
-            <div class="skill">HTML</div>
-            <div class="skill">CSS</div>
-            <div class="skill">JavaScript</div>
-            <div class="skill">PHP</div>
-            <div class="skill">MySQL</div>
-            <div class="skill">Figma</div>
-          </div>
-        </div>
-      </aside>
-    </section>
+<!-- Contact Section -->
+<section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:deepadhanushrimurugesan@gmail.com">deepadhanushrimurugesan@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/deepadhanushri-murugesan-a9ab2431b/" target="_blank">linkedin.com/in/deepadhanushri</a></p>
+    <p>GitHub: <a href="https://github.com/Deepadhanushrimurugesan/deepadhanushrimurugesan" target="_blank">github.com/deepadhanushrimurugesan</a></p>
+</section>
 
-    <section id="projects" class="projects">
-      <h2 style="margin:0 0 10px">Selected Projects</h2>
-      <div class="slider" aria-roledescription="carousel">
-        <div class="slides" id="slides">
-          
-          </div>
-        </div>
-
-        <div class="slider-controls">
-          <div style="display:flex;gap:8px">
-            <button id="prev" class="btn btn-outline" aria-label="Previous">◀</button>
-            <button id="next" class="btn btn-outline" aria-label="Next">▶</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="about">
-      <div class="card">
-        <h2>About Me</h2>
-        <p style="color:var(--muted)">I am a passionate and self-motivated Computer Science student with a strong interest in web development, UI/UX design, and software engineering. I enjoy building clean, responsive, and user-friendly applications using technologies like HTML, CSS, JavaScript, PHP, and MySQL.
-
-I have developed projects such as ProteqtHER – a women safety application and a Hospital Management System, which helped me understand real-world problem solving, system design, and full-stack development.
-
-I am always eager to learn new technologies, explore creative ideas, and build projects that create a meaningful impact. With a combination of technical skills, continuous learning attitude, and determination, I aim to grow as a developer and contribute to the tech industry.</p>
-        <h3 style="margin-top:12px">What I do</h3>
-        <ul style="color:var(--muted)">
-          <li>Responsive websites & web apps (HTML/CSS/JS/PHP)</li>
-          <li>UI/UX design and prototyping (Figma)</li>
-          <li>Performance-focused frontend and accessible markup</li>
-        </ul>
-      </div>
-
-      <div>
-        <div class="card">
-          <h3 id="skills">Skills & Tools</h3>
-          <div style="margin-top:8px;color:var(--muted)">
-            <strong>Frontend:</strong> HTML, CSS,JavaScript
-            <br/>
-            <strong>Backend:</strong> PHP, MySQL
-            <br/>
-          </div>
-        </div>
-
-        <div class="card" style="margin-top:12px">
-          <h4>Education</h4>
-          <p style="color:var(--muted);margin:6px 0">B.Sc. — Information Technology (SREE SARASWATHI THYAGARAJA COLLEGE OF ARTS AND SCIENCE)</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" style="margin-top:22px">
-      <div class="card">
-        <h2>Contact</h2>
-        <form action="mailto:deepa@example.com" method="post" enctype="text/plain">
-          <div class="grid-2">
-            <input type="text" name="name" placeholder="Your name" required />
-            <input type="email" name="email" placeholder="Email" required />
-          </div>
-          <input type="text" name="subject" placeholder="Subject" />
-          <textarea name="message" rows="6" placeholder="Write your message..." required></textarea>
-          <div style="display:flex;gap:10px;margin-top:6px">
-            <button type="submit" class="btn" style="background:linear-gradient(90deg,var(--accent-start),var(--accent-end));color:#fff;border:none;">Send Message</button>
-            <a class="btn btn-outline" href="mailto:deepa@example.com?subject=Hello%20Deepa" style="background:transparent;border:1px solid var(--glass-border);">Or email directly</a>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <footer>
-      <div style="margin-top:18px;color:var(--muted)">© <span id="year"></span> Deepa Dhanushri — Built with ❤️</div>
-    </footer>
-  </div>
-
-  <script>
-    // Set year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Typing effect (simple)
-    (function(){
-      const el = document.getElementById('typing');
-      const texts = ['Frontend Developer', 'UI/UX Designer', 'Problem solver', 'Open to freelance'];
-      let idx=0, char=0, forward=true;
-      function tick(){
-        const t = texts[idx];
-        if(forward){
-          char++;
-          el.textContent = t.slice(0,char);
-          if(char===t.length){ forward=false; setTimeout(tick,900); return }
-        } else {
-          char--;
-          el.textContent = t.slice(0,char);
-          if(char===0){ forward=true; idx=(idx+1)%texts.length }
-        }
-        setTimeout(tick, forward?80:40);
-      }
-      tick();
-    })();
-
-    // Slider
-    (function(){
-      const slides = document.getElementById('slides');
-      const total = slides.children.length;
-      let index = 0;
-      function goto(i){
-        index = (i + total) % total;
-        slides.style.transform = `translateX(${-index*100}%)`;
-      }
-      document.getElementById('prev').addEventListener('click', ()=> goto(index-1));
-      document.getElementById('next').addEventListener('click', ()=> goto(index+1));
-      // auto rotate
-      setInterval(()=> goto(index+1), 6000);
-    })();
-
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const target = document.querySelector(a.getAttribute('href'));
-        if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth',block:'start'}); }
-      })
-    })
-  </script>
+<script src="script.js"></script>
 </body>
 </html>

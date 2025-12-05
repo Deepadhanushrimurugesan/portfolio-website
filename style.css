@@ -1,0 +1,87 @@
+/* Reset */
+* { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+body { background:#f7f7f7; color:#333; scroll-behavior:smooth; }
+
+/* Navbar */
+nav {
+    position: fixed;
+    width: 100%;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    z-index: 100;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+nav a:hover { color: #ff0077; }
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+.hero h1 { font-size: 48px; margin-bottom: 20px; }
+.hero h1 span { color: #ff0077; }
+.hero p { font-size: 24px; margin-bottom: 30px; }
+.hero button {
+    padding: 12px 25px;
+    background: #ff0077;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+.hero button:hover { background: #e6006f; }
+
+/* Sections */
+section { padding: 80px 20px; text-align: center; }
+section h2 { font-size: 36px; margin-bottom: 30px; color: #111; }
+section p { max-width: 800px; margin: 0 auto 20px auto; font-size: 18px; line-height: 1.6; }
+
+/* Projects */
+.projects .project-card {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+.projects .project-card:hover { transform: scale(1.05); }
+
+/* Certificates */
+.certificates ul { list-style: none; }
+.certificates li {
+    background: #fff;
+    padding: 15px;
+    margin: 10px auto;
+    width: 60%;
+    border-radius: 8px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+
+/* Contact */
+.contact a { color: #ff0077; text-decoration: none; font-weight: bold; }
+.contact a:hover { text-decoration: underline; }
+
+/* Responsive */
+@media (max-width:768px){
+    .hero h1 { font-size: 36px; }
+    .hero p { font-size: 18px; }
+    .projects .project-card, .certificates li { width: 90%; }
+}
